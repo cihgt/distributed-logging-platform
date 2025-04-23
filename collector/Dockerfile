@@ -2,8 +2,10 @@ FROM golang:1.24 AS builder
 
 WORKDIR /app
 
-COPY go.mod go.sum ./
-RUN go mod download
+COPY collector/go.mod collector/go.sum ./
+COPY proto ./proto
+RUN go mod tidy
+
 COPY . .
 
 WORKDIR /app/collector

@@ -1,8 +1,8 @@
 package main
 
 import (
-	pb "distributed-logging-platform/proto"
 	"encoding/json"
+	pb "github.com/cihgt/distributed-logging-platform/proto"
 	"log"
 	"net/http"
 	"sync"

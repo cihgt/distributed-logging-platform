@@ -1,17 +1,17 @@
 services:
   collector:
     build:
-      context: ../
+      context: ..
       dockerfile: collector/Dockerfile
     ports:
       - "50051:50051"
       - "9091:9091"
-  auth:
-    build:
-      context: ../
-      dockerfile: services/auth/Dockerfile
-    depends_on:
-      - collector
+#  auth:
+#    build:
+#      context: ../
+#      dockerfile: services/auth/Dockerfile
+#    depends_on:
+#      - collector
 
   grafana:
     image: grafana/grafana
@@ -38,7 +38,8 @@ services:
     environment:
       - LOG_SERVICE_HOST=collector:50051
     build:
-      context: ../services/health-agent
+      context: ../
+      dockerfile: services/health-agent/Dockerfile
     depends_on:
       - collector
     restart: always

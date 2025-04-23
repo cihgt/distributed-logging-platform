@@ -1,7 +1,7 @@
 package main
 
 import (
-	logging "distributed-logging-platform/proto"
+	logging "github.com/cihgt/distributed-logging-platform/proto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"google.golang.org/grpc"
 	"log"

@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	logging "distributed-logging-platform/proto"
+	logging "github.com/cihgt/distributed-logging-platform/proto"
 	"log"
 )
 
