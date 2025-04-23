@@ -14,7 +14,7 @@ func main() {
 	if host == "" {
 		host = "collector:50051"
 	}
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial(host, grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("не смог подрубиться к gRPC: %v", err)
 	}
