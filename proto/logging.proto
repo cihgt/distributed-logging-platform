@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package logging;
+option go_package = "./proto";
+
+service LogService {
+  rpc Log(LogRequest) returns (LogResponse);
+  rpc ReportHealth(HealthReport) returns (HealthResponse);
+}
+
+message LogRequest {
+  string service = 1;
+  string level = 2;
+  string message = 3;
+}
+
+message LogResponse {
+  string status = 1;
+}
+
+message HealthReport {
+  string service = 1;
+  double cpu_usage = 2;
+  double memory_usage = 3;
+  uint64 goroutines = 4;
+  uint64 uptime = 5;
+}
+
+message HealthResponse {
+  string status = 1;
+}
